@@ -5,10 +5,10 @@ import java.io.File;
 public class DirCommand implements Command {
     @Override
     public void run(CurrentDirectory currentDirectory, String... args) {
-        File[] files = currentDirectory.getCurrentDirectory().listFiles();
+        File[] files = currentDirectory.getCurrentDirectory().listFiles(); // TODO: Files.list
         if (files != null) {
             for (File f : files) {
-                System.out.println(f.getName());
+                System.out.println(f.getName()); // TODO: что файл, а что директория?
             }
         }
         System.out.println("Вывод прошёл успешно!");

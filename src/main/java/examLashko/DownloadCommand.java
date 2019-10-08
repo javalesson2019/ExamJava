@@ -3,6 +3,8 @@ package examLashko;
 import java.io.*;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
 public class DownloadCommand implements Command {
     @Override
@@ -23,6 +25,9 @@ public class DownloadCommand implements Command {
                     } catch (MalformedURLException e) {
                         e.printStackTrace();
                     }
+
+                    // TODO: эта одна строка заменяет все ниже написанное!!!
+                    // Files.copy(url.openStream(), Paths.get(currentDirectory.getCurrentDirectory() + "\\" + args[1]));
 
                     BufferedInputStream in = null;
                     if (url != null) {

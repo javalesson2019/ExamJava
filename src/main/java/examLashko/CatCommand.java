@@ -7,6 +7,7 @@ import java.io.InputStream;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 
+// TODO: в чем смысл дублировать суффикс Command в именовании класса?
 public class CatCommand implements Command {
     @Override
     public void printHelp() {
@@ -29,7 +30,7 @@ public class CatCommand implements Command {
 
             if (file.exists() && file.length() > 0) {
                 try {
-                    InputStream in = new FileInputStream(file.getPath());
+                    InputStream in = new FileInputStream(file.getPath()); // TODO: м.б. через Files.readString былобы эффективнее?
                     Scanner scanner = new Scanner(in);
                     try {
                         while (true) {
